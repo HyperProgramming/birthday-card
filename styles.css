@@ -1,0 +1,135 @@
+body {
+    background-color: #00394d;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #ff0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.body {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.birthdayCard {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+.birthdayCard.flipped {
+    transform: rotateY(180deg);
+}
+
+.cardFront, .cardInside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 3px solid #85b36e;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.cardFront {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.cardInside {
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+}
+
+.happy {
+    background: linear-gradient(to right, #ffcc66, #ff9966);
+    padding: 5px 15px;
+    font-weight: bold;
+    color: black;
+    border-radius: 2px;
+}
+
+.balloons {
+    position: relative;
+    margin-top: 30px;
+    width: 250px;
+    height: 200px;
+}
+
+.balloons div {
+    width: 80px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.balloonOne {
+    background: #ff6666;
+    left: 0;
+}
+
+.balloonTwo {
+    background: #33cc99;
+    left: 50px;
+}
+
+.balloonThree {
+    background: #ffcc66;
+    left: 100px;
+}
+
+.balloonFour {
+    background: #3399cc;
+    left: 150px;
+}
+
+/* Strings */
+.balloons div::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    width: 2px;
+    height: 80px;
+    background: #ffd966;
+    transform: translateX(-50%);
+}
+
+.back {
+    font-weight: bold;
+    border: 2px dotted #333;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+
+p {
+    font-family: "Happy Sans";
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.name {
+    font-family: "Happy Serif";
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+}
