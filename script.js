@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const card = document.querySelector(".birthdayCard");
-    card.addEventListener("click", function() {
-        card.classList.toggle("flipped");
-    });
+const card = document.querySelector(".card");
+
+card.addEventListener('click', () => {
+    card.classList.toggle("open");
 });
