@@ -1,0 +1,138 @@
+body {
+    background-color: #00394d;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #ff0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.body {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.birthdayCard {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+.birthdayCard.flipped {
+    transform: rotateY(180deg);
+}
+
+.cardFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    border: 3px solid #85b36e;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.cardFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #c40001; /* deep red background */
+    border: none; /* remove green border */
+    backface-visibility: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "KaiTi", "SimSun", serif; /* Chinese-style font if available */
+}
+
+/* The big golden character */
+.hanzi {
+    font-size: 80px;
+    color: gold;
+    text-shadow: 0 0 5px rgba(255,215,0,0.6);
+    margin: 0;
+    z-index: 2;
+}
+
+/* Decorative corners */
+.decor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    pointer-events: none;
+}
+
+.decor.top {
+    top: 10px;
+    left: 10px;
+    background: radial-gradient(circle at top left, gold 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.decor.bottom {
+    bottom: 10px;
+    right: 10px;
+    background: radial-gradient(circle at bottom right, gold 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.cardInside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 3px solid #85b36e;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.cardFront {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.cardInside {
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: left;
+}
+
+.back {
+    font-weight: bold;
+    border: 2px dotted #333;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+
+p {
+    font-family: "Happy Sans";
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.name {
+    font-family: "Happy Serif";
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+}
